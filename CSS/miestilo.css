@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#contenedor {
+  width: 100%px;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#laberinto_A {
+  width: 800px;
+  height: 600px;
+  border: 5px solid black;
+}
+
+#laberinto_B {
+  box-sizing: border-box;
+  width: 400px;
+  height: 600px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#laberinto_C {
+  box-sizing: border-box;
+  width: 400px;
+  height: 600px;
+  float: left;
+}
+
+#laberinto_imagen {
+  background-image: url(/Imágenes/laberinto.png);
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 391px;
+}
+
+#jugador {  
+  position: absolute;
+  top: 161px;
+  left: 317px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+#meta {
+  position: absolute;
+  left: 617px;
+  top: 296px;
+  width: 20px;
+  height: 55px;
+  background-color: rgba(255, 120, 0, 0.4);
+  border-radius: 10px;
+  font-weight:bold;  
+}
+
+#meta > p {
+  padding-left: 5px;
+  transform: rotate(90deg);
+  color: gray;
+  z-index: 1;
+}
+
+#lab_arriba {
+  width: 400px;
+  height: 100px;
+  text-align: center;
+  font: 20px "Helvetica";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lab_medio {
+  width: 400px;
+  height: 391px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#controles {
+  width: 128px;
+  height: 192px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+#arriba {
+  background-image: url(/Imágenes/flechaArriba.png);
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+#izquierda {
+  background-image: url(/Imágenes/flechaIzquierda.png);
+  width: 64px;
+  height: 64px;
+  float: left;
+}
+
+#derecha {
+  background-image: url(/Imágenes/flechaDerecha.png);
+  width: 64px;
+  height: 64px;
+  float: left;
+}
+
+#abajo {
+  clear: both;
+  background-image: url(/Imágenes/flechaAbajo.png);
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+#lab_abajo {
+  width: 400px;
+  height: 109px;
+  text-align: center;
+  font: 18px "Verdana";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lab_abajo > p {
+  padding: 0px 10px;
+}

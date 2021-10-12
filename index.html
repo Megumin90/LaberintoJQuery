@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/miestilo.css" />
+    <script src="/JS/jQuery.js"></script>
+    <script>
+      $(document).ready(function () {
+        var x = 317;
+        var y = 161;
+
+        function llegadaMeta() {
+          if (x == 617 && (y == 301 || y == 321)) {
+            alert("FELICITACIONES! LLEGASTE A LA META!");
+          }
+        }
+
+        $("#jugador").click(function () {
+          alert("X = " + x + " Y= " + y);
+        });
+
+        $("#arriba").mouseenter(function () {
+          $("#arriba")
+            .css("background-color", "gray")
+            .css("border-radius", "10px");
+        });
+
+        $("#arriba").click(function () {
+          y = y - 20;
+          $("#jugador").css("top", y + "px");
+          if (
+            y < 161 ||
+            (x >= 317 && x <= 417 && y == 281) ||
+            (x >= 437 && x <= 497 && y == 221) ||
+            (x >= 497 && x <= 617 && y == 281) ||
+            (x >= 377 && x <= 477 && y == 341) ||
+            (x >= 577 && x <= 617 && y == 341) ||
+            (x >= 437 && x <= 557 && y == 421) ||
+            (x == 377 && y == 221) ||
+            (x == 377 && y == 421) ||
+            (x == 497 && y == 341) ||
+            (x == 577 && y == 421) ||
+            (x == 437 && y == 281)
+          ) {
+            /*alert("Fuera del límite Y");*/
+            y = y + 20;
+            $("#jugador").css("top", y + "px");
+          }
+        });
+
+        $(document).keydown(function (e) {
+          if (e.which == 38) {
+            y = y - 20;
+            $("#jugador").css("top", y + "px");
+            $("#arriba").css("background-color", "gray").css("border-radius", "20px");
+            setTimeout(function()
+            { $("#arriba").css("background-color", "lightgray"); }, 100);
+            if (
+              y < 161 ||
+              (x >= 317 && x <= 417 && y == 281) ||
+              (x >= 437 && x <= 497 && y == 221) ||
+              (x >= 497 && x <= 617 && y == 281) ||
+              (x >= 377 && x <= 477 && y == 341) ||
+              (x >= 577 && x <= 617 && y == 341) ||
+              (x >= 437 && x <= 557 && y == 421) ||
+              (x == 377 && y == 221) ||
+              (x == 377 && y == 421) ||
+              (x == 497 && y == 341) ||
+              (x == 577 && y == 421) ||
+              (x == 437 && y == 281)
+            ) {
+              /*alert("Fuera del límite Y");*/
+              y = y + 20;
+              $("#jugador").css("top", y + "px");
+            }
+          }
+        });
+
+        $("#arriba").mouseleave(function () {
+          $("#arriba").css("background-color", "lightgray");
+        });
+
+        $("#izquierda").mouseenter(function () {
+          $("#izquierda")
+            .css("background-color", "gray")
+            .css("border-radius", "10px");
+        });
+
+        $("#izquierda").click(function () {
+          x = x - 20;
+          $("#jugador").css("left", x + "px");          
+          if (
+            x < 317 ||
+            (y >= 161 && y <= 221 && x == 377) ||
+            (y >= 221 && y <= 281 && x == 437) ||
+            (y >= 221 && y <= 261 && x == 577) ||
+            (y >= 281 && y <= 341 && x == 497) ||
+            (y >= 361 && y <= 421 && x == 377) ||
+            (y == 421 && x == 437) ||
+            (y == 421 && x == 577) ||
+            (y == 221 && x == 497) ||
+            (y >= 341 && y <= 401 && x == 577)
+          ) {
+            /*alert("Fuera del límite X");*/
+            x = x + 20;
+            $("#jugador").css("left", x + "px");
+          }
+        });
+
+        $(document).keydown(function (e) {
+          if (e.which == 37) {
+            x = x - 20;
+            $("#jugador").css("left", x + "px");
+            $("#izquierda").css("background-color", "gray").css("border-radius", "20px");
+            setTimeout(function()
+            { $("#izquierda").css("background-color", "lightgray"); }, 100);
+            if (
+              x < 317 ||
+              (y >= 161 && y <= 221 && x == 377) ||
+              (y >= 221 && y <= 281 && x == 437) ||
+              (y >= 221 && y <= 261 && x == 577) ||
+              (y >= 281 && y <= 341 && x == 497) ||
+              (y >= 361 && y <= 421 && x == 377) ||
+              (y == 421 && x == 437) ||
+              (y == 421 && x == 577) ||
+              (y == 221 && x == 497) ||
+              (y >= 341 && y <= 401 && x == 577)
+            ) {
+              /*alert("Fuera del límite X");*/
+              x = x + 20;
+              $("#jugador").css("left", x + "px");
+            }
+          }
+        });
+
+        $("#izquierda").mouseleave(function () {
+          $("#izquierda").css("background-color", "lightgray");
+        });
+
+        $("#derecha").mouseenter(function () {
+          $("#derecha")
+            .css("background-color", "gray")
+            .css("border-radius", "10px");
+        });
+
+        $("#derecha").click(function () {
+          x = x + 20;
+          $("#jugador").css("left", x + "px");          
+          if (
+            x >= 620 ||
+            (y >= 161 && y <= 221 && x == 377) ||
+            (y >= 221 && y <= 281 && x == 437) ||
+            (y >= 221 && y <= 261 && x == 577) ||
+            (y >= 281 && y <= 341 && x == 497) ||
+            (y >= 361 && y <= 421 && x == 377) ||
+            (y == 421 && x == 437) ||
+            (y >= 341 && y <= 401 && x == 577)
+          ) {
+            /*alert("Fuera del límite X");*/
+            x = x - 20;
+            $("#jugador").css("left", x + "px");
+          }
+          llegadaMeta(x, y);
+        });
+
+        $(document).keydown(function (e) {
+          if (e.which == 39) {
+            x = x + 20;
+            $("#jugador").css("left", x + "px");
+            $("#derecha").css("background-color", "gray").css("border-radius", "20px");
+            if (
+              x >= 620 ||
+              (y >= 161 && y <= 221 && x == 377) ||
+              (y >= 221 && y <= 281 && x == 437) ||
+              (y >= 221 && y <= 261 && x == 577) ||
+              (y >= 281 && y <= 341 && x == 497) ||
+              (y >= 341 && y <= 421 && x == 377) ||
+              (y == 421 && x == 437) ||
+              (y >= 341 && y <= 401 && x == 577)
+            ) {
+              /*alert("Fuera del límite X");*/
+              x = x - 20;
+              $("#jugador").css("left", x + "px");
+            }
+            setTimeout(function()
+            { $("#derecha").css("background-color", "lightgray"); }, 100);
+            llegadaMeta(x, y);
+          }
+        });
+
+        $("#derecha").mouseleave(function () {
+          $("#derecha").css("background-color", "lightgray");
+        });
+
+        $("#abajo").mouseenter(function () {
+          $("#abajo")
+            .css("background-color", "gray")
+            .css("border-radius", "20px");
+        });
+
+        $("#abajo").click(function () {
+          y = y + 20;
+          $("#jugador").css("top", y + "px");
+          if (
+            y > 461 ||
+            (x >= 317 && x <= 417 && y == 281) ||
+            (x >= 437 && x <= 497 && y == 221) ||
+            (x >= 497 && x <= 617 && y == 281) ||
+            (x >= 377 && x <= 477 && y == 341) ||
+            (x >= 577 && x <= 617 && y == 341) ||
+            (x == 577 && y == 221) ||
+            (x >= 437 && x <= 557 && y == 421)
+          ) {
+            /*alert("Fuera del límite Y");*/
+            y = y - 20;
+            $("#jugador").css("top", y + "px");
+          }
+        });
+
+        $(document).keydown(function (e) {
+          if (e.which == 40) {
+            y = y + 20;
+            $("#jugador").css("top", y + "px");
+            $("#abajo").css("background-color", "gray").css("border-radius", "20px");
+            setTimeout(function()
+            { $("#abajo").css("background-color", "lightgray"); }, 100);
+            if (
+              y > 461 ||
+              (x >= 317 && x <= 417 && y == 281) ||
+              (x >= 437 && x <= 497 && y == 221) ||
+              (x >= 497 && x <= 617 && y == 281) ||
+              (x >= 377 && x <= 477 && y == 341) ||
+              (x >= 577 && x <= 617 && y == 341) ||
+              (x == 577 && y == 221) ||
+              (x >= 437 && x <= 557 && y == 421)
+            ) {
+              /*alert("Fuera del límite Y");*/
+              y = y - 20;
+              $("#jugador").css("top", y + "px");
+            }
+          }
+        });
+
+        $("#abajo").mouseleave(function () {
+          $("#abajo").css("background-color", "lightgray");
+        });
+      });
+    </script>
+    <title>Ejercicio jQuery - Laberinto</title>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="laberinto_A">
+        <div id="laberinto_B">
+          <div id="laberinto_imagen">
+            <div id="jugador"></div>
+            <div id="meta">
+              <p>META</p>
+            </div>
+          </div>
+        </div>
+        <div id="laberinto_C">
+          <div id="lab_arriba">
+            <h1>Laberinto jQuery</h1>
+            <span></span>
+          </div>
+          <div id="lab_medio">
+            <div id="controles">
+              <div id="arriba"></div>
+              <div id="izquierda"></div>
+              <div id="derecha"></div>
+              <div id="abajo"></div>
+            </div>
+          </div>
+          <div id="lab_abajo">
+            <p>
+              Has click sobre la flecha en la dirección que quieras mover el
+              círculo o muévelo con las teclas arriba, abajo, izquierda y
+              derecha del teclado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
